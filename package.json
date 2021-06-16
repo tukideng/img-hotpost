@@ -1,7 +1,7 @@
 {
-  "name": "img_hotspot",
-  "version": "0.1.0",
-  "private": true,
+  "name": "img-hotpost",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.14.0",
+    "less": "^4.1.1",
+    "less-loader": "^4.1.0",
     "vue": "^2.6.14"
   },
   "devDependencies": {
@@ -32,11 +34,31 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {}
+    "rules": {
+      "no-debugger": "off"
+    }
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xw336699/img-hotpost.git"
+  },
+  "keywords": [
+    "vue-imghotpost",
+    "img-hotpost",
+    "hotpost",
+    "img"
+  ],
+  "author": "xuweiwei",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xw336699/img-hotpost/issues"
+  },
+  "homepage": "https://github.com/xw336699/img-hotpost#readme"
 }
