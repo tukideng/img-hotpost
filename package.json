@@ -1,6 +1,6 @@
 {
-  "name": "img-hotpost",
-  "version": "1.0.0",
+  "name": "img-hotpost-test",
+  "version": "1.0.2",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.14.0",
+    "img-hotpost": "^1.0.4",
     "less": "^4.1.1",
     "less-loader": "^4.1.0",
     "vue": "^2.6.14"

@@ -6,7 +6,7 @@
     @mousedown.self="onAddMousedown($event)"
     @mouseup.self="onAddMouseup($event)"
   >
-    <img :src="options.icon" />
+    <img :src="options.icon" crossorigin="anonymous" alt="图片加载失败" />
     <a
       style="display:inline-block;position: absolute;"
       :style="{'left': item.left +'px', 'top': item.top+'px', 'width':item.width +'px', 'height': item.height + 'px'}"
@@ -120,7 +120,7 @@ export default {
         return {
           width: 750,
           height: 400,
-          icon: require("../assets/timg.jpg"),
+          icon: require("./assets/timg.jpg"),
           maskList: []
         };
       }
@@ -128,6 +128,7 @@ export default {
   },
   methods: {
     onAddMousedown(e) {
+      if(this.mode != 'isAdd')return
       this.newItem = {
         width: null,
         height: null,
@@ -143,6 +144,7 @@ export default {
       this.isAddMove = true;
     },
     onAddMouseup(e) {
+      if(this.mode != 'isAdd')return
       let pageX = e.pageX,
         pageY = e.pageY;
       if (this.pageX && this.pageY) {

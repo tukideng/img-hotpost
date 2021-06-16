@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import imgHotpost from './imgHotpost';
+import imgHotpost from 'img-hotpost';
 Vue.use(imgHotpost)
 Vue.config.productionTip = false
 

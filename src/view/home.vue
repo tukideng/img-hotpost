@@ -1,7 +1,9 @@
 <template>
   <div>
-   <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"></imgHotpost>
-    <span @click="onEdit">编辑</span>
+    <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"></imgHotpost>
+    <button @click="onAdd">新增</button>
+    &nbsp;
+    <button @click="onEdit">编辑</button>
   </div>
 </template>
 
@@ -9,7 +11,7 @@
 export default {
   data() {
     return {
-      mode:'isAdd',
+      mode: "",
       options: {
         width: 750,
         height: 400,
@@ -37,10 +39,13 @@ export default {
   },
   methods: {
     onEdit() {
-      this.mode = 'isEdit'
+      this.mode = "isEdit";
+    },
+    onAdd() {
+      this.mode = "isAdd";
     },
     onAddHotpost(value) {
-      this.options.maskList.push(value)
+      this.options.maskList.push(value);
     }
   }
 };
