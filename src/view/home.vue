@@ -1,6 +1,6 @@
 <template>
   <div>
-    <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"></imgHotpost>
+    <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"  @onClickBox="onClickBox"></imgHotpost>
     <button @click="onAdd">新增</button>
     &nbsp;
     <button @click="onEdit">编辑</button>
@@ -46,6 +46,9 @@ export default {
     },
     onAddHotpost(value) {
       this.options.maskList.push(value);
+    },
+    onClickBox(item){
+      console.log('item___',item)
     }
   }
 };

@@ -16,6 +16,7 @@
       @mousemove.self="onMoveBox($event, item)"
       @mouseup.self="onUpBox($event, item)"
       @mousedown.self="onDownBox($event, item)"
+      @click.self="onClickBox( item)"
       @mouseleave="onLeaveBox"
     >
       <!-- 左上 -->
@@ -159,6 +160,7 @@ export default {
       this.pageY = null;
       this.isAddMove = false;
       this.$emit("onAddHotpost", this.newItem);
+      this.$emit("onClickBox",this.newItem)
     },
     onMoveBox(e, item) {
       if (!this.isMove) return;
@@ -214,6 +216,9 @@ export default {
         this.setlocation(e, item, className);
         return;
       }
+    },
+    onClickBox(item){
+      this.$emit("onClickBox",item)
     },
     setlocation(e, item, className) {
       let pageX = e.pageX,
@@ -281,14 +286,14 @@ export default {
 };
 </script>
 
-<style lang="less" >
+<style  >
 .img-box {
   border: 1px solid silver;
   overflow: hidden;
-  & > img {
-    width: 100%;
+}
+.img-box > img{
+   width: 100%;
     height: 100%;
-  }
 }
 .editable-bg {
   z-index: 11;
@@ -297,8 +302,9 @@ export default {
 }
 .able-edit-bg {
   position: relative;
-  &::after {
-    content: "";
+}
+.able-edit-bg::after{
+  content: "";
     position: absolute;
     left: 0;
     top: 0;
@@ -306,7 +312,6 @@ export default {
     height: 100%;
     z-index: 10;
     background-color: rgba(192, 192, 192, 0.363);
-  }
 }
 .tag {
   position: absolute;
@@ -315,14 +320,14 @@ export default {
   height: 5px;
   background-color: rgba(255, 255, 255, 0.541);
   border: 1px solid rgb(179, 255, 182);
-  &::after {
+}
+.tag::after{
     content: "";
     position: absolute;
     left: -300%;
     top: -300%;
     width: 30px;
     height: 30px;
-  }
 }
 .tag-left-top {
   left: -2.5px;

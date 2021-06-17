@@ -10,8 +10,6 @@
   "dependencies": {
     "core-js": "^3.14.0",
     "img-hotpost": "^1.0.4",
-    "less": "^4.1.1",
-    "less-loader": "^4.1.0",
     "vue": "^2.6.14"
   },
   "devDependencies": {

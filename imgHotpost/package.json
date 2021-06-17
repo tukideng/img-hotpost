@@ -1,7 +1,7 @@
 {
   "name": "img-hotpost",
-  "version": "1.0.4",
-  "description": "",
+  "version": "1.0.5",
+  "description": "新增点击热区回调事件",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

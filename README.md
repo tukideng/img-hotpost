@@ -52,6 +52,12 @@ npm run serve
           }
         ]
       }
+
+      // 回调事件
+      onAddHotpost(){} // 新增回调事件、参数 item 当前热区参数
+
+      onClickBox（）{} // 点击当前热区回调事件、参数 item 当前热区参数
+
 ```
 ### 联系方式
 ```
