@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.14.0",
-    "img-hotpost": "^1.0.4",
+    "img-hotpost": "^1.0.5",
     "vue": "^2.6.14"
   },
   "devDependencies": {

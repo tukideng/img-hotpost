@@ -1,6 +1,6 @@
 <template>
   <div>
-    <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"  @onClickBox="onClickBox"></imgHotpost>
+    <imgHotpost :mode="mode" :options="options" @onAddHotpost="onAddHotpost"  @onClickBox="onClickBox" @onItemHotpostDelete="onItemHotpostDelete"></imgHotpost>
     <button @click="onAdd">新增</button>
     &nbsp;
     <button @click="onEdit">编辑</button>
@@ -49,6 +49,9 @@ export default {
     },
     onClickBox(item){
       console.log('item___',item)
+    },
+    onItemHotpostDelete (index) {
+      this.options.maskList.splice(index,1);
     }
   }
 };

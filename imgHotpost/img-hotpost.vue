@@ -19,6 +19,7 @@
       @click.self="onClickBox( item)"
       @mouseleave="onLeaveBox"
     >
+      <i class="icon-delete-item" @click.self="onItemHotpostDelete(index)" v-if="mode === 'isEdit' || mode === 'isAdd'"></i>
       <!-- 左上 -->
       <span
         v-if="(mode === 'isEdit' || mode === 'isAdd')"
@@ -38,14 +39,14 @@
         @mouseleave="onImgMouseLeave"
       ></span>
       <!-- 右上 -->
-      <span
+     <!--  <span
         v-if="(mode === 'isEdit' || mode === 'isAdd')"
         class="tag tag-right-top"
         @mousemove.self="onImgMousemove($event, item, 'tag-right-top')"
         @mousedown.self="onImgMousedown($event, item, 'tag-right-top')"
         @mouseup.self="onImgMouseup($event, item, 'tag-right-top')"
         @mouseleave="onImgMouseLeave"
-      ></span>
+      ></span> -->
       <!-- 左 -->
       <span
         v-if="(mode === 'isEdit' || mode === 'isAdd')"
@@ -131,6 +132,7 @@ export default {
     onAddMousedown(e) {
       if(this.mode != 'isAdd')return
       this.newItem = {
+        type: null,
         width: null,
         height: null,
         color: "white",
@@ -216,6 +218,9 @@ export default {
         this.setlocation(e, item, className);
         return;
       }
+    },
+    onItemHotpostDelete(i){
+      this.$emit("onItemHotpostDelete", i);
     },
     onClickBox(item){
       this.$emit("onClickBox",item)
@@ -345,6 +350,25 @@ export default {
   right: -2.5px;
   top: -2.5px;
   cursor: sw-resize;
+}
+
+.icon-delete-item{
+  position: absolute;
+  cursor: pointer;
+  right: -8px;
+  top: -12px;
+}
+
+.icon-delete-item::after{
+  content: '-';
+  display: inline-block;
+  color: white;
+  background-color: rgb(73, 3, 3);
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  line-height: 10px;
+  border-radius: 50%;
 }
 
 .tag-left {
