@@ -158,6 +158,7 @@ export default {
         this.newItem.height = YValue;
         this.newItem.left = e.layerX - XValue;
         this.newItem.top = e.layerY - YValue;
+        this.newItem.index = this.options.maskList.length + 1;
       }
       this.pageX = null;
       this.pageY = null;
