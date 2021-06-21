@@ -18,6 +18,7 @@ export default {
         icon: require("../assets/timg.jpg"),
         maskList: [
           {
+            index: 1,
             width: 100,
             height: 100,
             color: "white",
@@ -26,6 +27,7 @@ export default {
             url: "#"
           },
           {
+            index: 2,
             width: 50,
             height: 50,
             color: "white",

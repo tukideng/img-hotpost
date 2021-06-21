@@ -20,6 +20,7 @@
       @mouseleave="onLeaveBox"
     >
       <i class="icon-delete-item" @click.self="onItemHotpostDelete(index)" v-if="mode === 'isEdit' || mode === 'isAdd'"></i>
+      <span class="text-index" v-if="mode === 'isEdit' || mode === 'isAdd'">{{item.index}}</span>
       <!-- 左上 -->
       <span
         v-if="(mode === 'isEdit' || mode === 'isAdd')"
@@ -132,13 +133,13 @@ export default {
     onAddMousedown(e) {
       if(this.mode != 'isAdd')return
       this.newItem = {
+        index: this.options.maskList.length+1,
         type: null,
         width: null,
         height: null,
         color: "white",
         left: null,
-        top: null,
-        url: ""
+        top: null
       };
       let pageX = e.pageX,
         pageY = e.pageY;
@@ -300,9 +301,18 @@ export default {
    width: 100%;
     height: 100%;
 }
+.text-index{
+  font-weight: 700;
+  font-size: 22px;
+  color: rgb(187, 186, 186);
+  pointer-events: none;
+}
 .editable-bg {
   z-index: 11;
   cursor: move;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.479);
 }
 .able-edit-bg {
