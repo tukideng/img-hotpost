@@ -6,7 +6,7 @@
     @mousedown.self="onAddMousedown($event)"
     @mouseup.self="onAddMouseup($event)"
   >
-    <img :src="options.icon" crossorigin="anonymous" alt="图片加载失败" />
+    <img :src="options.icon"  alt="图片加载失败" />
     <a
       style="display:inline-block;position: absolute;"
       :style="{'left': item.left +'px', 'top': item.top+'px', 'width':item.width +'px', 'height': item.height + 'px'}"
